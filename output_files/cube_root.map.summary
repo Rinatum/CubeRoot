@@ -1,0 +1,16 @@
+Analysis & Synthesis Status : Successful - Thu Apr 26 15:51:14 2018
+Quartus Prime Version : 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+Revision Name : cube_root
+Top-level Entity Name : cube_root
+Family : MAX 10
+Total logic elements : 1,860
+    Total combinational functions : 1,860
+    Dedicated logic registers : 231
+Total registers : 231
+Total pins : 71
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 17
+Total PLLs : 0
+UFM blocks : 0
+ADC blocks : 0

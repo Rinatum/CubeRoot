@@ -1,0 +1,12 @@
+v1
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,Output:out|calculation_module:calc|lpm_mult:Mult3|mult_oks:auto_generated|mac_out2,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,Output:out|calculation_module:calc|lpm_mult:Mult4|mult_sks:auto_generated|mac_out2,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,Output:out|calculation_module:calc|lpm_mult:Mult5|mult_0ls:auto_generated|mac_out2,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,Output:out|calculation_module:calc|lpm_mult:Mult6|mult_cms:auto_generated|mac_out2,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,Output:out|calculation_module:calc|lpm_mult:Mult7|mult_7ms:auto_generated|mac_out2,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,Output:out|calculation_module:calc|lpm_mult:Mult8|mult_hns:auto_generated|mac_out2,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,Output:out|calculation_module:calc|lpm_mult:Mult9|mult_mns:auto_generated|mac_out2,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,Input:in|lpm_mult:Mult0|mult_qgs:auto_generated|mac_out2,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,Input:in|lpm_mult:Mult0|mult_qgs:auto_generated|mac_out4,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,Input:in|lpm_mult:Mult0|mult_qgs:auto_generated|mac_out6,
+PORT_SWAPPING,PORT_SWAP_TYPE_DSPMULT,Input:in|lpm_mult:Mult0|mult_qgs:auto_generated|mac_mult5,

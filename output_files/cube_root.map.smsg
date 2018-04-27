@@ -1,0 +1,4 @@
+Info (10281): Verilog HDL Declaration information at Output.sv(2): object "HEX" differs only in case from object "hex" in the same scope File: /home/user/cube_root_project/Output.sv Line: 2
+Info (10281): Verilog HDL Declaration information at calculation_module.sv(7): object "Led" differs only in case from object "led" in the same scope File: /home/user/cube_root_project/calculation_module.sv Line: 7
+Info (10281): Verilog HDL Declaration information at cube_root.sv(7): object "HEX" differs only in case from object "hex" in the same scope File: /home/user/cube_root_project/cube_root.sv Line: 7
+Info (10281): Verilog HDL Declaration information at Input.sv(6): object "Led" differs only in case from object "led" in the same scope File: /home/user/cube_root_project/Input.sv Line: 6

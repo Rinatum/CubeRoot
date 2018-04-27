@@ -1,0 +1,1498 @@
+Analysis & Synthesis report for cube_root
+Thu Apr 26 15:51:14 2018
+Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Analysis & Synthesis Source Files Read
+  5. Analysis & Synthesis Resource Usage Summary
+  6. Analysis & Synthesis Resource Utilization by Entity
+  7. Analysis & Synthesis DSP Block Usage Summary
+  8. User-Specified and Inferred Latches
+  9. General Register Statistics
+ 10. Inverted Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for Inferred Entity Instance: Output:out|lpm_divide:Mod0
+ 13. Parameter Settings for Inferred Entity Instance: Output:out|lpm_divide:Div0
+ 14. Parameter Settings for Inferred Entity Instance: Output:out|lpm_divide:Mod1
+ 15. Parameter Settings for Inferred Entity Instance: Output:out|lpm_divide:Div1
+ 16. Parameter Settings for Inferred Entity Instance: Output:out|lpm_divide:Mod2
+ 17. Parameter Settings for Inferred Entity Instance: Output:out|lpm_divide:Div2
+ 18. Parameter Settings for Inferred Entity Instance: Output:out|lpm_divide:Mod3
+ 19. Parameter Settings for Inferred Entity Instance: Output:out|calculation_module:calc|lpm_mult:Mult1
+ 20. Parameter Settings for Inferred Entity Instance: Output:out|calculation_module:calc|lpm_mult:Mult2
+ 21. Parameter Settings for Inferred Entity Instance: Output:out|calculation_module:calc|lpm_mult:Mult3
+ 22. Parameter Settings for Inferred Entity Instance: Output:out|calculation_module:calc|lpm_mult:Mult4
+ 23. Parameter Settings for Inferred Entity Instance: Output:out|calculation_module:calc|lpm_mult:Mult5
+ 24. Parameter Settings for Inferred Entity Instance: Output:out|calculation_module:calc|lpm_mult:Mult6
+ 25. Parameter Settings for Inferred Entity Instance: Output:out|calculation_module:calc|lpm_mult:Mult7
+ 26. Parameter Settings for Inferred Entity Instance: Output:out|calculation_module:calc|lpm_mult:Mult8
+ 27. Parameter Settings for Inferred Entity Instance: Output:out|calculation_module:calc|lpm_mult:Mult9
+ 28. Parameter Settings for Inferred Entity Instance: Input:in|lpm_mult:Mult0
+ 29. lpm_mult Parameter Settings by Entity Instance
+ 30. Post-Synthesis Netlist Statistics for Top Partition
+ 31. Elapsed Time Per Partition
+ 32. Analysis & Synthesis Messages
+ 33. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2017  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Thu Apr 26 15:51:14 2018       ;
+; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
+; Revision Name                      ; cube_root                                   ;
+; Top-level Entity Name              ; cube_root                                   ;
+; Family                             ; MAX 10                                      ;
+; Total logic elements               ; 1,860                                       ;
+;     Total combinational functions  ; 1,860                                       ;
+;     Dedicated logic registers      ; 231                                         ;
+; Total registers                    ; 231                                         ;
+; Total pins                         ; 71                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 17                                          ;
+; Total PLLs                         ; 0                                           ;
+; UFM blocks                         ; 0                                           ;
+; ADC blocks                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; 10M50DAF484C7G     ;                    ;
+; Top-level entity name                                                      ; cube_root          ; cube_root          ;
+; Family name                                                                ; MAX 10             ; Cyclone V          ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                              ; Enable             ; Enable             ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                                        ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                     ;
++----------------------------------+-----------------+------------------------------------+----------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                           ; Library ;
++----------------------------------+-----------------+------------------------------------+----------------------------------------------------------------------------------------+---------+
+; Output.sv                        ; yes             ; User SystemVerilog HDL File        ; /home/user/cube_root_project/Output.sv                                                 ;         ;
+; calculation_module.sv            ; yes             ; User SystemVerilog HDL File        ; /home/user/cube_root_project/calculation_module.sv                                     ;         ;
+; cube_root.sv                     ; yes             ; User SystemVerilog HDL File        ; /home/user/cube_root_project/cube_root.sv                                              ;         ;
+; Input.sv                         ; yes             ; Auto-Found SystemVerilog HDL File  ; /home/user/cube_root_project/Input.sv                                                  ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                       ; /home/user/intelFPGA_lite/17.1/quartus/libraries/megafunctions/lpm_divide.tdf          ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                       ; /home/user/intelFPGA_lite/17.1/quartus/libraries/megafunctions/abs_divider.inc         ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                       ; /home/user/intelFPGA_lite/17.1/quartus/libraries/megafunctions/sign_div_unsign.inc     ;         ;
+; aglobal171.inc                   ; yes             ; Megafunction                       ; /home/user/intelFPGA_lite/17.1/quartus/libraries/megafunctions/aglobal171.inc          ;         ;
+; db/lpm_divide_pll.tdf            ; yes             ; Auto-Generated Megafunction        ; /home/user/cube_root_project/db/lpm_divide_pll.tdf                                     ;         ;
+; db/sign_div_unsign_olh.tdf       ; yes             ; Auto-Generated Megafunction        ; /home/user/cube_root_project/db/sign_div_unsign_olh.tdf                                ;         ;
+; db/alt_u_div_qhe.tdf             ; yes             ; Auto-Generated Megafunction        ; /home/user/cube_root_project/db/alt_u_div_qhe.tdf                                      ;         ;
+; db/add_sub_t3c.tdf               ; yes             ; Auto-Generated Megafunction        ; /home/user/cube_root_project/db/add_sub_t3c.tdf                                        ;         ;
+; db/add_sub_u3c.tdf               ; yes             ; Auto-Generated Megafunction        ; /home/user/cube_root_project/db/add_sub_u3c.tdf                                        ;         ;
+; db/lpm_divide_mtl.tdf            ; yes             ; Auto-Generated Megafunction        ; /home/user/cube_root_project/db/lpm_divide_mtl.tdf                                     ;         ;
+; lpm_mult.tdf                     ; yes             ; Megafunction                       ; /home/user/intelFPGA_lite/17.1/quartus/libraries/megafunctions/lpm_mult.tdf            ;         ;
+; lpm_add_sub.inc                  ; yes             ; Megafunction                       ; /home/user/intelFPGA_lite/17.1/quartus/libraries/megafunctions/lpm_add_sub.inc         ;         ;
+; multcore.inc                     ; yes             ; Megafunction                       ; /home/user/intelFPGA_lite/17.1/quartus/libraries/megafunctions/multcore.inc            ;         ;
+; bypassff.inc                     ; yes             ; Megafunction                       ; /home/user/intelFPGA_lite/17.1/quartus/libraries/megafunctions/bypassff.inc            ;         ;
+; altshift.inc                     ; yes             ; Megafunction                       ; /home/user/intelFPGA_lite/17.1/quartus/libraries/megafunctions/altshift.inc            ;         ;
+; multcore.tdf                     ; yes             ; Megafunction                       ; /home/user/intelFPGA_lite/17.1/quartus/libraries/megafunctions/multcore.tdf            ;         ;
+; csa_add.inc                      ; yes             ; Megafunction                       ; /home/user/intelFPGA_lite/17.1/quartus/libraries/megafunctions/csa_add.inc             ;         ;
+; mpar_add.inc                     ; yes             ; Megafunction                       ; /home/user/intelFPGA_lite/17.1/quartus/libraries/megafunctions/mpar_add.inc            ;         ;
+; muleabz.inc                      ; yes             ; Megafunction                       ; /home/user/intelFPGA_lite/17.1/quartus/libraries/megafunctions/muleabz.inc             ;         ;
+; mul_lfrg.inc                     ; yes             ; Megafunction                       ; /home/user/intelFPGA_lite/17.1/quartus/libraries/megafunctions/mul_lfrg.inc            ;         ;
+; mul_boothc.inc                   ; yes             ; Megafunction                       ; /home/user/intelFPGA_lite/17.1/quartus/libraries/megafunctions/mul_boothc.inc          ;         ;
+; alt_ded_mult.inc                 ; yes             ; Megafunction                       ; /home/user/intelFPGA_lite/17.1/quartus/libraries/megafunctions/alt_ded_mult.inc        ;         ;
+; alt_ded_mult_y.inc               ; yes             ; Megafunction                       ; /home/user/intelFPGA_lite/17.1/quartus/libraries/megafunctions/alt_ded_mult_y.inc      ;         ;
+; dffpipe.inc                      ; yes             ; Megafunction                       ; /home/user/intelFPGA_lite/17.1/quartus/libraries/megafunctions/dffpipe.inc             ;         ;
+; mpar_add.tdf                     ; yes             ; Megafunction                       ; /home/user/intelFPGA_lite/17.1/quartus/libraries/megafunctions/mpar_add.tdf            ;         ;
+; lpm_add_sub.tdf                  ; yes             ; Megafunction                       ; /home/user/intelFPGA_lite/17.1/quartus/libraries/megafunctions/lpm_add_sub.tdf         ;         ;
+; addcore.inc                      ; yes             ; Megafunction                       ; /home/user/intelFPGA_lite/17.1/quartus/libraries/megafunctions/addcore.inc             ;         ;
+; look_add.inc                     ; yes             ; Megafunction                       ; /home/user/intelFPGA_lite/17.1/quartus/libraries/megafunctions/look_add.inc            ;         ;
+; alt_stratix_add_sub.inc          ; yes             ; Megafunction                       ; /home/user/intelFPGA_lite/17.1/quartus/libraries/megafunctions/alt_stratix_add_sub.inc ;         ;
+; db/add_sub_amg.tdf               ; yes             ; Auto-Generated Megafunction        ; /home/user/cube_root_project/db/add_sub_amg.tdf                                        ;         ;
+; db/add_sub_bmg.tdf               ; yes             ; Auto-Generated Megafunction        ; /home/user/cube_root_project/db/add_sub_bmg.tdf                                        ;         ;
+; altshift.tdf                     ; yes             ; Megafunction                       ; /home/user/intelFPGA_lite/17.1/quartus/libraries/megafunctions/altshift.tdf            ;         ;
+; db/mult_kks.tdf                  ; yes             ; Auto-Generated Megafunction        ; /home/user/cube_root_project/db/mult_kks.tdf                                           ;         ;
+; db/mult_oks.tdf                  ; yes             ; Auto-Generated Megafunction        ; /home/user/cube_root_project/db/mult_oks.tdf                                           ;         ;
+; db/mult_sks.tdf                  ; yes             ; Auto-Generated Megafunction        ; /home/user/cube_root_project/db/mult_sks.tdf                                           ;         ;
+; db/mult_0ls.tdf                  ; yes             ; Auto-Generated Megafunction        ; /home/user/cube_root_project/db/mult_0ls.tdf                                           ;         ;
+; db/mult_cms.tdf                  ; yes             ; Auto-Generated Megafunction        ; /home/user/cube_root_project/db/mult_cms.tdf                                           ;         ;
+; db/mult_7ms.tdf                  ; yes             ; Auto-Generated Megafunction        ; /home/user/cube_root_project/db/mult_7ms.tdf                                           ;         ;
+; db/mult_hns.tdf                  ; yes             ; Auto-Generated Megafunction        ; /home/user/cube_root_project/db/mult_hns.tdf                                           ;         ;
+; db/mult_mns.tdf                  ; yes             ; Auto-Generated Megafunction        ; /home/user/cube_root_project/db/mult_mns.tdf                                           ;         ;
+; db/mult_qgs.tdf                  ; yes             ; Auto-Generated Megafunction        ; /home/user/cube_root_project/db/mult_qgs.tdf                                           ;         ;
++----------------------------------+-----------------+------------------------------------+----------------------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                   ;
++---------------------------------------------+-----------------+
+; Resource                                    ; Usage           ;
++---------------------------------------------+-----------------+
+; Estimated Total logic elements              ; 1,860           ;
+;                                             ;                 ;
+; Total combinational functions               ; 1860            ;
+; Logic element usage by number of LUT inputs ;                 ;
+;     -- 4 input functions                    ; 667             ;
+;     -- 3 input functions                    ; 815             ;
+;     -- <=2 input functions                  ; 378             ;
+;                                             ;                 ;
+; Logic elements by mode                      ;                 ;
+;     -- normal mode                          ; 1202            ;
+;     -- arithmetic mode                      ; 658             ;
+;                                             ;                 ;
+; Total registers                             ; 231             ;
+;     -- Dedicated logic registers            ; 231             ;
+;     -- I/O registers                        ; 0               ;
+;                                             ;                 ;
+; I/O pins                                    ; 71              ;
+;                                             ;                 ;
+; Embedded Multiplier 9-bit elements          ; 17              ;
+;                                             ;                 ;
+; Maximum fan-out node                        ; SWITCH[0]~input ;
+; Maximum fan-out                             ; 235             ;
+; Total fan-out                               ; 6764            ;
+; Average fan-out                             ; 3.00            ;
++---------------------------------------------+-----------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                                                                   ;
++------------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; Compilation Hierarchy Node                           ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                                                                                                  ; Entity Name         ; Library Name ;
++------------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; |cube_root                                           ; 1860 (29)           ; 231 (22)                  ; 0           ; 0          ; 17           ; 3       ; 7         ; 71   ; 0            ; 0          ; |cube_root                                                                                                                                                           ; cube_root           ; work         ;
+;    |Input:in|                                        ; 170 (142)           ; 96 (96)                   ; 0           ; 0          ; 6            ; 0       ; 3         ; 0    ; 0            ; 0          ; |cube_root|Input:in                                                                                                                                                  ; Input               ; work         ;
+;       |lpm_mult:Mult0|                               ; 28 (0)              ; 0 (0)                     ; 0           ; 0          ; 6            ; 0       ; 3         ; 0    ; 0            ; 0          ; |cube_root|Input:in|lpm_mult:Mult0                                                                                                                                   ; lpm_mult            ; work         ;
+;          |mult_qgs:auto_generated|                   ; 28 (28)             ; 0 (0)                     ; 0           ; 0          ; 6            ; 0       ; 3         ; 0    ; 0            ; 0          ; |cube_root|Input:in|lpm_mult:Mult0|mult_qgs:auto_generated                                                                                                           ; mult_qgs            ; work         ;
+;    |Output:out|                                      ; 1661 (558)          ; 113 (113)                 ; 0           ; 0          ; 11           ; 3       ; 4         ; 0    ; 0            ; 0          ; |cube_root|Output:out                                                                                                                                                ; Output              ; work         ;
+;       |calculation_module:calc|                      ; 744 (682)           ; 0 (0)                     ; 0           ; 0          ; 11           ; 3       ; 4         ; 0    ; 0            ; 0          ; |cube_root|Output:out|calculation_module:calc                                                                                                                        ; calculation_module  ; work         ;
+;          |lpm_mult:Mult1|                            ; 23 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |cube_root|Output:out|calculation_module:calc|lpm_mult:Mult1                                                                                                         ; lpm_mult            ; work         ;
+;             |multcore:mult_core|                     ; 23 (11)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |cube_root|Output:out|calculation_module:calc|lpm_mult:Mult1|multcore:mult_core                                                                                      ; multcore            ; work         ;
+;                |mpar_add:padder|                     ; 12 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |cube_root|Output:out|calculation_module:calc|lpm_mult:Mult1|multcore:mult_core|mpar_add:padder                                                                      ; mpar_add            ; work         ;
+;                   |lpm_add_sub:adder[0]|             ; 6 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |cube_root|Output:out|calculation_module:calc|lpm_mult:Mult1|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]                                                 ; lpm_add_sub         ; work         ;
+;                      |add_sub_amg:auto_generated|    ; 6 (6)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |cube_root|Output:out|calculation_module:calc|lpm_mult:Mult1|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|add_sub_amg:auto_generated                      ; add_sub_amg         ; work         ;
+;                   |mpar_add:sub_par_add|             ; 6 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |cube_root|Output:out|calculation_module:calc|lpm_mult:Mult1|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add                                                 ; mpar_add            ; work         ;
+;                      |lpm_add_sub:adder[0]|          ; 6 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |cube_root|Output:out|calculation_module:calc|lpm_mult:Mult1|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]                            ; lpm_add_sub         ; work         ;
+;                         |add_sub_bmg:auto_generated| ; 6 (6)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |cube_root|Output:out|calculation_module:calc|lpm_mult:Mult1|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]|add_sub_bmg:auto_generated ; add_sub_bmg         ; work         ;
+;          |lpm_mult:Mult2|                            ; 39 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |cube_root|Output:out|calculation_module:calc|lpm_mult:Mult2                                                                                                         ; lpm_mult            ; work         ;
+;             |mult_kks:auto_generated|                ; 39 (39)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |cube_root|Output:out|calculation_module:calc|lpm_mult:Mult2|mult_kks:auto_generated                                                                                 ; mult_kks            ; work         ;
+;          |lpm_mult:Mult3|                            ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 1            ; 1       ; 0         ; 0    ; 0            ; 0          ; |cube_root|Output:out|calculation_module:calc|lpm_mult:Mult3                                                                                                         ; lpm_mult            ; work         ;
+;             |mult_oks:auto_generated|                ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 1            ; 1       ; 0         ; 0    ; 0            ; 0          ; |cube_root|Output:out|calculation_module:calc|lpm_mult:Mult3|mult_oks:auto_generated                                                                                 ; mult_oks            ; work         ;
+;          |lpm_mult:Mult4|                            ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 1            ; 1       ; 0         ; 0    ; 0            ; 0          ; |cube_root|Output:out|calculation_module:calc|lpm_mult:Mult4                                                                                                         ; lpm_mult            ; work         ;
+;             |mult_sks:auto_generated|                ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 1            ; 1       ; 0         ; 0    ; 0            ; 0          ; |cube_root|Output:out|calculation_module:calc|lpm_mult:Mult4|mult_sks:auto_generated                                                                                 ; mult_sks            ; work         ;
+;          |lpm_mult:Mult5|                            ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 1            ; 1       ; 0         ; 0    ; 0            ; 0          ; |cube_root|Output:out|calculation_module:calc|lpm_mult:Mult5                                                                                                         ; lpm_mult            ; work         ;
+;             |mult_0ls:auto_generated|                ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 1            ; 1       ; 0         ; 0    ; 0            ; 0          ; |cube_root|Output:out|calculation_module:calc|lpm_mult:Mult5|mult_0ls:auto_generated                                                                                 ; mult_0ls            ; work         ;
+;          |lpm_mult:Mult6|                            ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 2            ; 0       ; 1         ; 0    ; 0            ; 0          ; |cube_root|Output:out|calculation_module:calc|lpm_mult:Mult6                                                                                                         ; lpm_mult            ; work         ;
+;             |mult_cms:auto_generated|                ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 2            ; 0       ; 1         ; 0    ; 0            ; 0          ; |cube_root|Output:out|calculation_module:calc|lpm_mult:Mult6|mult_cms:auto_generated                                                                                 ; mult_cms            ; work         ;
+;          |lpm_mult:Mult7|                            ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 2            ; 0       ; 1         ; 0    ; 0            ; 0          ; |cube_root|Output:out|calculation_module:calc|lpm_mult:Mult7                                                                                                         ; lpm_mult            ; work         ;
+;             |mult_7ms:auto_generated|                ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 2            ; 0       ; 1         ; 0    ; 0            ; 0          ; |cube_root|Output:out|calculation_module:calc|lpm_mult:Mult7|mult_7ms:auto_generated                                                                                 ; mult_7ms            ; work         ;
+;          |lpm_mult:Mult8|                            ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 2            ; 0       ; 1         ; 0    ; 0            ; 0          ; |cube_root|Output:out|calculation_module:calc|lpm_mult:Mult8                                                                                                         ; lpm_mult            ; work         ;
+;             |mult_hns:auto_generated|                ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 2            ; 0       ; 1         ; 0    ; 0            ; 0          ; |cube_root|Output:out|calculation_module:calc|lpm_mult:Mult8|mult_hns:auto_generated                                                                                 ; mult_hns            ; work         ;
+;          |lpm_mult:Mult9|                            ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 2            ; 0       ; 1         ; 0    ; 0            ; 0          ; |cube_root|Output:out|calculation_module:calc|lpm_mult:Mult9                                                                                                         ; lpm_mult            ; work         ;
+;             |mult_mns:auto_generated|                ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 2            ; 0       ; 1         ; 0    ; 0            ; 0          ; |cube_root|Output:out|calculation_module:calc|lpm_mult:Mult9|mult_mns:auto_generated                                                                                 ; mult_mns            ; work         ;
+;       |lpm_divide:Div0|                              ; 96 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |cube_root|Output:out|lpm_divide:Div0                                                                                                                                ; lpm_divide          ; work         ;
+;          |lpm_divide_mtl:auto_generated|             ; 96 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |cube_root|Output:out|lpm_divide:Div0|lpm_divide_mtl:auto_generated                                                                                                  ; lpm_divide_mtl      ; work         ;
+;             |sign_div_unsign_olh:divider|            ; 96 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |cube_root|Output:out|lpm_divide:Div0|lpm_divide_mtl:auto_generated|sign_div_unsign_olh:divider                                                                      ; sign_div_unsign_olh ; work         ;
+;                |alt_u_div_qhe:divider|               ; 96 (96)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |cube_root|Output:out|lpm_divide:Div0|lpm_divide_mtl:auto_generated|sign_div_unsign_olh:divider|alt_u_div_qhe:divider                                                ; alt_u_div_qhe       ; work         ;
+;       |lpm_divide:Div1|                              ; 58 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |cube_root|Output:out|lpm_divide:Div1                                                                                                                                ; lpm_divide          ; work         ;
+;          |lpm_divide_mtl:auto_generated|             ; 58 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |cube_root|Output:out|lpm_divide:Div1|lpm_divide_mtl:auto_generated                                                                                                  ; lpm_divide_mtl      ; work         ;
+;             |sign_div_unsign_olh:divider|            ; 58 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |cube_root|Output:out|lpm_divide:Div1|lpm_divide_mtl:auto_generated|sign_div_unsign_olh:divider                                                                      ; sign_div_unsign_olh ; work         ;
+;                |alt_u_div_qhe:divider|               ; 58 (58)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |cube_root|Output:out|lpm_divide:Div1|lpm_divide_mtl:auto_generated|sign_div_unsign_olh:divider|alt_u_div_qhe:divider                                                ; alt_u_div_qhe       ; work         ;
+;       |lpm_divide:Div2|                              ; 19 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |cube_root|Output:out|lpm_divide:Div2                                                                                                                                ; lpm_divide          ; work         ;
+;          |lpm_divide_mtl:auto_generated|             ; 19 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |cube_root|Output:out|lpm_divide:Div2|lpm_divide_mtl:auto_generated                                                                                                  ; lpm_divide_mtl      ; work         ;
+;             |sign_div_unsign_olh:divider|            ; 19 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |cube_root|Output:out|lpm_divide:Div2|lpm_divide_mtl:auto_generated|sign_div_unsign_olh:divider                                                                      ; sign_div_unsign_olh ; work         ;
+;                |alt_u_div_qhe:divider|               ; 19 (19)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |cube_root|Output:out|lpm_divide:Div2|lpm_divide_mtl:auto_generated|sign_div_unsign_olh:divider|alt_u_div_qhe:divider                                                ; alt_u_div_qhe       ; work         ;
+;       |lpm_divide:Mod0|                              ; 99 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |cube_root|Output:out|lpm_divide:Mod0                                                                                                                                ; lpm_divide          ; work         ;
+;          |lpm_divide_pll:auto_generated|             ; 99 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |cube_root|Output:out|lpm_divide:Mod0|lpm_divide_pll:auto_generated                                                                                                  ; lpm_divide_pll      ; work         ;
+;             |sign_div_unsign_olh:divider|            ; 99 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |cube_root|Output:out|lpm_divide:Mod0|lpm_divide_pll:auto_generated|sign_div_unsign_olh:divider                                                                      ; sign_div_unsign_olh ; work         ;
+;                |alt_u_div_qhe:divider|               ; 99 (99)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |cube_root|Output:out|lpm_divide:Mod0|lpm_divide_pll:auto_generated|sign_div_unsign_olh:divider|alt_u_div_qhe:divider                                                ; alt_u_div_qhe       ; work         ;
+;       |lpm_divide:Mod1|                              ; 66 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |cube_root|Output:out|lpm_divide:Mod1                                                                                                                                ; lpm_divide          ; work         ;
+;          |lpm_divide_pll:auto_generated|             ; 66 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |cube_root|Output:out|lpm_divide:Mod1|lpm_divide_pll:auto_generated                                                                                                  ; lpm_divide_pll      ; work         ;
+;             |sign_div_unsign_olh:divider|            ; 66 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |cube_root|Output:out|lpm_divide:Mod1|lpm_divide_pll:auto_generated|sign_div_unsign_olh:divider                                                                      ; sign_div_unsign_olh ; work         ;
+;                |alt_u_div_qhe:divider|               ; 66 (66)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |cube_root|Output:out|lpm_divide:Mod1|lpm_divide_pll:auto_generated|sign_div_unsign_olh:divider|alt_u_div_qhe:divider                                                ; alt_u_div_qhe       ; work         ;
+;       |lpm_divide:Mod2|                              ; 21 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |cube_root|Output:out|lpm_divide:Mod2                                                                                                                                ; lpm_divide          ; work         ;
+;          |lpm_divide_pll:auto_generated|             ; 21 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |cube_root|Output:out|lpm_divide:Mod2|lpm_divide_pll:auto_generated                                                                                                  ; lpm_divide_pll      ; work         ;
+;             |sign_div_unsign_olh:divider|            ; 21 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |cube_root|Output:out|lpm_divide:Mod2|lpm_divide_pll:auto_generated|sign_div_unsign_olh:divider                                                                      ; sign_div_unsign_olh ; work         ;
+;                |alt_u_div_qhe:divider|               ; 21 (21)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |cube_root|Output:out|lpm_divide:Mod2|lpm_divide_pll:auto_generated|sign_div_unsign_olh:divider|alt_u_div_qhe:divider                                                ; alt_u_div_qhe       ; work         ;
++------------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis DSP Block Usage Summary        ;
++---------------------------------------+-------------+
+; Statistic                             ; Number Used ;
++---------------------------------------+-------------+
+; Simple Multipliers (9-bit)            ; 3           ;
+; Simple Multipliers (18-bit)           ; 7           ;
+; Embedded Multiplier Blocks            ; --          ;
+; Embedded Multiplier 9-bit elements    ; 17          ;
+; Signed Embedded Multipliers           ; 0           ;
+; Unsigned Embedded Multipliers         ; 8           ;
+; Mixed Sign Embedded Multipliers       ; 2           ;
+; Variable Sign Embedded Multipliers    ; 0           ;
+; Dedicated Input Shift Register Chains ; 0           ;
++---------------------------------------+-------------+
+Note: number of Embedded Multiplier Blocks used is only available after a successful fit.
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                                         ;
++-------------------------------------------------------+--------------------------------------------+------------------------+
+; Latch Name                                            ; Latch Enable Signal                        ; Free of Timing Hazards ;
++-------------------------------------------------------+--------------------------------------------+------------------------+
+; Output:out|calculation_module:calc|answ[0]            ; Output:out|calculation_module:calc|always0 ; yes                    ;
+; Output:out|calculation_module:calc|answ[3]            ; Output:out|calculation_module:calc|always0 ; yes                    ;
+; Output:out|calculation_module:calc|answ[2]            ; Output:out|calculation_module:calc|always0 ; yes                    ;
+; Output:out|calculation_module:calc|answ[1]            ; Output:out|calculation_module:calc|always0 ; yes                    ;
+; Output:out|calculation_module:calc|answ[10]           ; Output:out|calculation_module:calc|always0 ; yes                    ;
+; Output:out|calculation_module:calc|answ[9]            ; Output:out|calculation_module:calc|always0 ; yes                    ;
+; Output:out|calculation_module:calc|answ[8]            ; Output:out|calculation_module:calc|always0 ; yes                    ;
+; Output:out|calculation_module:calc|answ[7]            ; Output:out|calculation_module:calc|always0 ; yes                    ;
+; Output:out|calculation_module:calc|answ[6]            ; Output:out|calculation_module:calc|always0 ; yes                    ;
+; Output:out|calculation_module:calc|answ[5]            ; Output:out|calculation_module:calc|always0 ; yes                    ;
+; Output:out|calculation_module:calc|answ[4]            ; Output:out|calculation_module:calc|always0 ; yes                    ;
+; Output:out|calculation_module:calc|y[0]               ; Output:out|calculation_module:calc|always0 ; yes                    ;
+; Output:out|calculation_module:calc|ready_to_calculate ; GND                                        ; yes                    ;
+; Output:out|calculation_module:calc|y[3]               ; Output:out|calculation_module:calc|always0 ; yes                    ;
+; Output:out|calculation_module:calc|y[2]               ; Output:out|calculation_module:calc|always0 ; yes                    ;
+; Output:out|calculation_module:calc|y[1]               ; Output:out|calculation_module:calc|always0 ; yes                    ;
+; Output:out|calculation_module:calc|y[10]              ; Output:out|calculation_module:calc|always0 ; yes                    ;
+; Output:out|calculation_module:calc|y[9]               ; Output:out|calculation_module:calc|always0 ; yes                    ;
+; Output:out|calculation_module:calc|y[8]               ; Output:out|calculation_module:calc|always0 ; yes                    ;
+; Output:out|calculation_module:calc|y[7]               ; Output:out|calculation_module:calc|always0 ; yes                    ;
+; Output:out|calculation_module:calc|y[6]               ; Output:out|calculation_module:calc|always0 ; yes                    ;
+; Output:out|calculation_module:calc|y[5]               ; Output:out|calculation_module:calc|always0 ; yes                    ;
+; Output:out|calculation_module:calc|y[4]               ; Output:out|calculation_module:calc|always0 ; yes                    ;
+; Number of user-specified and inferred latches = 23    ;                                            ;                        ;
++-------------------------------------------------------+--------------------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 231   ;
+; Number of registers using Synchronous Clear  ; 62    ;
+; Number of registers using Synchronous Load   ; 20    ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 159   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------+
+; Inverted Register Statistics                      ;
++-----------------------------------------+---------+
+; Inverted Register                       ; Fan out ;
++-----------------------------------------+---------+
+; Output:out|digit[29]                    ; 3       ;
+; Output:out|digit[28]                    ; 3       ;
+; Output:out|digit[27]                    ; 3       ;
+; Output:out|digit[26]                    ; 3       ;
+; Output:out|digit[25]                    ; 3       ;
+; Output:out|digit[24]                    ; 3       ;
+; Output:out|digit[23]                    ; 3       ;
+; Output:out|digit[22]                    ; 3       ;
+; Output:out|digit[21]                    ; 3       ;
+; Output:out|digit[20]                    ; 3       ;
+; Output:out|digit[19]                    ; 3       ;
+; Output:out|digit[18]                    ; 3       ;
+; Output:out|digit[17]                    ; 3       ;
+; Output:out|digit[16]                    ; 3       ;
+; Output:out|digit[15]                    ; 3       ;
+; Output:out|digit[14]                    ; 3       ;
+; Output:out|digit[13]                    ; 3       ;
+; Output:out|digit[12]                    ; 3       ;
+; Output:out|digit[11]                    ; 3       ;
+; Output:out|digit[10]                    ; 3       ;
+; Output:out|digit[9]                     ; 3       ;
+; Output:out|digit[8]                     ; 3       ;
+; Output:out|digit[7]                     ; 3       ;
+; Output:out|digit[6]                     ; 3       ;
+; Output:out|digit[5]                     ; 3       ;
+; Output:out|digit[4]                     ; 3       ;
+; Output:out|digit[3]                     ; 3       ;
+; Output:out|digit[2]                     ; 3       ;
+; Output:out|digit[1]                     ; 4       ;
+; Output:out|digit[0]                     ; 3       ;
+; Output:out|digit[30]                    ; 3       ;
+; Output:out|digit[31]                    ; 3       ;
+; Output:out|finish                       ; 32      ;
+; Input:in|digit[0]                       ; 5       ;
+; Input:in|digit[1]                       ; 5       ;
+; Input:in|digit[2]                       ; 5       ;
+; Input:in|digit[3]                       ; 5       ;
+; Input:in|digit[4]                       ; 5       ;
+; Input:in|digit[5]                       ; 5       ;
+; Input:in|digit[6]                       ; 5       ;
+; Input:in|digit[7]                       ; 5       ;
+; Input:in|digit[8]                       ; 5       ;
+; Input:in|digit[9]                       ; 5       ;
+; Input:in|digit[10]                      ; 5       ;
+; Input:in|digit[11]                      ; 5       ;
+; Input:in|digit[12]                      ; 5       ;
+; Input:in|digit[13]                      ; 5       ;
+; Input:in|digit[14]                      ; 5       ;
+; Input:in|digit[15]                      ; 5       ;
+; Input:in|digit[16]                      ; 5       ;
+; Input:in|digit[17]                      ; 5       ;
+; Input:in|factor[0]                      ; 5       ;
+; Input:in|digit[18]                      ; 4       ;
+; Input:in|digit[19]                      ; 4       ;
+; Input:in|digit[20]                      ; 4       ;
+; Input:in|digit[21]                      ; 4       ;
+; Input:in|digit[22]                      ; 4       ;
+; Input:in|digit[23]                      ; 4       ;
+; Input:in|digit[24]                      ; 4       ;
+; Input:in|digit[25]                      ; 4       ;
+; Input:in|digit[26]                      ; 4       ;
+; Input:in|digit[27]                      ; 4       ;
+; Input:in|digit[28]                      ; 4       ;
+; Input:in|digit[29]                      ; 4       ;
+; Input:in|digit[30]                      ; 4       ;
+; Input:in|digit[31]                      ; 4       ;
+; Total number of inverted registers = 66 ;         ;
++-----------------------------------------+---------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------+
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |cube_root|Output:out|t[25]    ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |cube_root|Input:in|value[4]   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; Yes        ; |cube_root|Input:in|digit[12]  ;
+; 3:1                ; 31 bits   ; 62 LEs        ; 31 LEs               ; 31 LEs                 ; Yes        ; |cube_root|Input:in|factor[17] ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; Yes        ; |cube_root|Output:out|digit[1] ;
+; 16:1               ; 7 bits    ; 70 LEs        ; 35 LEs               ; 35 LEs                 ; No         ; |cube_root|Output:out|Mux5     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------+
+
+
++-----------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Output:out|lpm_divide:Mod0 ;
++------------------------+----------------+-----------------------------------+
+; Parameter Name         ; Value          ; Type                              ;
++------------------------+----------------+-----------------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                           ;
+; LPM_WIDTHD             ; 4              ; Untyped                           ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                           ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                           ;
+; LPM_PIPELINE           ; 0              ; Untyped                           ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                           ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                           ;
+; CBXI_PARAMETER         ; lpm_divide_pll ; Untyped                           ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                           ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                           ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                        ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                      ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                      ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                    ;
++------------------------+----------------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Output:out|lpm_divide:Div0 ;
++------------------------+----------------+-----------------------------------+
+; Parameter Name         ; Value          ; Type                              ;
++------------------------+----------------+-----------------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                           ;
+; LPM_WIDTHD             ; 4              ; Untyped                           ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                           ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                           ;
+; LPM_PIPELINE           ; 0              ; Untyped                           ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                           ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                           ;
+; CBXI_PARAMETER         ; lpm_divide_mtl ; Untyped                           ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                           ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                           ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                        ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                      ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                      ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                    ;
++------------------------+----------------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Output:out|lpm_divide:Mod1 ;
++------------------------+----------------+-----------------------------------+
+; Parameter Name         ; Value          ; Type                              ;
++------------------------+----------------+-----------------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                           ;
+; LPM_WIDTHD             ; 4              ; Untyped                           ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                           ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                           ;
+; LPM_PIPELINE           ; 0              ; Untyped                           ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                           ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                           ;
+; CBXI_PARAMETER         ; lpm_divide_pll ; Untyped                           ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                           ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                           ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                        ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                      ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                      ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                    ;
++------------------------+----------------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Output:out|lpm_divide:Div1 ;
++------------------------+----------------+-----------------------------------+
+; Parameter Name         ; Value          ; Type                              ;
++------------------------+----------------+-----------------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                           ;
+; LPM_WIDTHD             ; 4              ; Untyped                           ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                           ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                           ;
+; LPM_PIPELINE           ; 0              ; Untyped                           ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                           ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                           ;
+; CBXI_PARAMETER         ; lpm_divide_mtl ; Untyped                           ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                           ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                           ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                        ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                      ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                      ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                    ;
++------------------------+----------------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Output:out|lpm_divide:Mod2 ;
++------------------------+----------------+-----------------------------------+
+; Parameter Name         ; Value          ; Type                              ;
++------------------------+----------------+-----------------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                           ;
+; LPM_WIDTHD             ; 4              ; Untyped                           ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                           ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                           ;
+; LPM_PIPELINE           ; 0              ; Untyped                           ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                           ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                           ;
+; CBXI_PARAMETER         ; lpm_divide_pll ; Untyped                           ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                           ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                           ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                        ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                      ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                      ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                    ;
++------------------------+----------------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Output:out|lpm_divide:Div2 ;
++------------------------+----------------+-----------------------------------+
+; Parameter Name         ; Value          ; Type                              ;
++------------------------+----------------+-----------------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                           ;
+; LPM_WIDTHD             ; 4              ; Untyped                           ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                           ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                           ;
+; LPM_PIPELINE           ; 0              ; Untyped                           ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                           ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                           ;
+; CBXI_PARAMETER         ; lpm_divide_mtl ; Untyped                           ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                           ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                           ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                        ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                      ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                      ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                    ;
++------------------------+----------------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Output:out|lpm_divide:Mod3 ;
++------------------------+----------------+-----------------------------------+
+; Parameter Name         ; Value          ; Type                              ;
++------------------------+----------------+-----------------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                           ;
+; LPM_WIDTHD             ; 4              ; Untyped                           ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                           ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                           ;
+; LPM_PIPELINE           ; 0              ; Untyped                           ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                           ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                           ;
+; CBXI_PARAMETER         ; lpm_divide_pll ; Untyped                           ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                           ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                           ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                        ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                      ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                      ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                    ;
++------------------------+----------------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Output:out|calculation_module:calc|lpm_mult:Mult1 ;
++------------------------------------------------+----------+----------------------------------------+
+; Parameter Name                                 ; Value    ; Type                                   ;
++------------------------------------------------+----------+----------------------------------------+
+; AUTO_CARRY_CHAINS                              ; ON       ; AUTO_CARRY                             ;
+; IGNORE_CARRY_BUFFERS                           ; OFF      ; IGNORE_CARRY                           ;
+; AUTO_CASCADE_CHAINS                            ; ON       ; AUTO_CASCADE                           ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF      ; IGNORE_CASCADE                         ;
+; LPM_WIDTHA                                     ; 5        ; Untyped                                ;
+; LPM_WIDTHB                                     ; 3        ; Untyped                                ;
+; LPM_WIDTHP                                     ; 8        ; Untyped                                ;
+; LPM_WIDTHR                                     ; 8        ; Untyped                                ;
+; LPM_WIDTHS                                     ; 1        ; Untyped                                ;
+; LPM_REPRESENTATION                             ; UNSIGNED ; Untyped                                ;
+; LPM_PIPELINE                                   ; 0        ; Untyped                                ;
+; LATENCY                                        ; 0        ; Untyped                                ;
+; INPUT_A_IS_CONSTANT                            ; NO       ; Untyped                                ;
+; INPUT_B_IS_CONSTANT                            ; NO       ; Untyped                                ;
+; USE_EAB                                        ; OFF      ; Untyped                                ;
+; MAXIMIZE_SPEED                                 ; 5        ; Untyped                                ;
+; DEVICE_FAMILY                                  ; MAX 10   ; Untyped                                ;
+; CARRY_CHAIN                                    ; MANUAL   ; Untyped                                ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT      ; TECH_MAPPER_APEX20K                    ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO     ; Untyped                                ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0        ; Untyped                                ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0        ; Untyped                                ;
+; CBXI_PARAMETER                                 ; NOTHING  ; Untyped                                ;
+; INPUT_A_FIXED_VALUE                            ; Bx       ; Untyped                                ;
+; INPUT_B_FIXED_VALUE                            ; Bx       ; Untyped                                ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF      ; Untyped                                ;
++------------------------------------------------+----------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Output:out|calculation_module:calc|lpm_mult:Mult2 ;
++------------------------------------------------+----------+----------------------------------------+
+; Parameter Name                                 ; Value    ; Type                                   ;
++------------------------------------------------+----------+----------------------------------------+
+; AUTO_CARRY_CHAINS                              ; ON       ; AUTO_CARRY                             ;
+; IGNORE_CARRY_BUFFERS                           ; OFF      ; IGNORE_CARRY                           ;
+; AUTO_CASCADE_CHAINS                            ; ON       ; AUTO_CASCADE                           ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF      ; IGNORE_CASCADE                         ;
+; LPM_WIDTHA                                     ; 6        ; Untyped                                ;
+; LPM_WIDTHB                                     ; 4        ; Untyped                                ;
+; LPM_WIDTHP                                     ; 10       ; Untyped                                ;
+; LPM_WIDTHR                                     ; 10       ; Untyped                                ;
+; LPM_WIDTHS                                     ; 1        ; Untyped                                ;
+; LPM_REPRESENTATION                             ; UNSIGNED ; Untyped                                ;
+; LPM_PIPELINE                                   ; 0        ; Untyped                                ;
+; LATENCY                                        ; 0        ; Untyped                                ;
+; INPUT_A_IS_CONSTANT                            ; NO       ; Untyped                                ;
+; INPUT_B_IS_CONSTANT                            ; NO       ; Untyped                                ;
+; USE_EAB                                        ; OFF      ; Untyped                                ;
+; MAXIMIZE_SPEED                                 ; 5        ; Untyped                                ;
+; DEVICE_FAMILY                                  ; MAX 10   ; Untyped                                ;
+; CARRY_CHAIN                                    ; MANUAL   ; Untyped                                ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT      ; TECH_MAPPER_APEX20K                    ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO     ; Untyped                                ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0        ; Untyped                                ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0        ; Untyped                                ;
+; CBXI_PARAMETER                                 ; mult_kks ; Untyped                                ;
+; INPUT_A_FIXED_VALUE                            ; Bx       ; Untyped                                ;
+; INPUT_B_FIXED_VALUE                            ; Bx       ; Untyped                                ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF      ; Untyped                                ;
++------------------------------------------------+----------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Output:out|calculation_module:calc|lpm_mult:Mult3 ;
++------------------------------------------------+----------+----------------------------------------+
+; Parameter Name                                 ; Value    ; Type                                   ;
++------------------------------------------------+----------+----------------------------------------+
+; AUTO_CARRY_CHAINS                              ; ON       ; AUTO_CARRY                             ;
+; IGNORE_CARRY_BUFFERS                           ; OFF      ; IGNORE_CARRY                           ;
+; AUTO_CASCADE_CHAINS                            ; ON       ; AUTO_CASCADE                           ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF      ; IGNORE_CASCADE                         ;
+; LPM_WIDTHA                                     ; 7        ; Untyped                                ;
+; LPM_WIDTHB                                     ; 5        ; Untyped                                ;
+; LPM_WIDTHP                                     ; 12       ; Untyped                                ;
+; LPM_WIDTHR                                     ; 12       ; Untyped                                ;
+; LPM_WIDTHS                                     ; 1        ; Untyped                                ;
+; LPM_REPRESENTATION                             ; UNSIGNED ; Untyped                                ;
+; LPM_PIPELINE                                   ; 0        ; Untyped                                ;
+; LATENCY                                        ; 0        ; Untyped                                ;
+; INPUT_A_IS_CONSTANT                            ; NO       ; Untyped                                ;
+; INPUT_B_IS_CONSTANT                            ; NO       ; Untyped                                ;
+; USE_EAB                                        ; OFF      ; Untyped                                ;
+; MAXIMIZE_SPEED                                 ; 5        ; Untyped                                ;
+; DEVICE_FAMILY                                  ; MAX 10   ; Untyped                                ;
+; CARRY_CHAIN                                    ; MANUAL   ; Untyped                                ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT      ; TECH_MAPPER_APEX20K                    ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO     ; Untyped                                ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0        ; Untyped                                ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0        ; Untyped                                ;
+; CBXI_PARAMETER                                 ; mult_oks ; Untyped                                ;
+; INPUT_A_FIXED_VALUE                            ; Bx       ; Untyped                                ;
+; INPUT_B_FIXED_VALUE                            ; Bx       ; Untyped                                ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF      ; Untyped                                ;
++------------------------------------------------+----------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Output:out|calculation_module:calc|lpm_mult:Mult4 ;
++------------------------------------------------+----------+----------------------------------------+
+; Parameter Name                                 ; Value    ; Type                                   ;
++------------------------------------------------+----------+----------------------------------------+
+; AUTO_CARRY_CHAINS                              ; ON       ; AUTO_CARRY                             ;
+; IGNORE_CARRY_BUFFERS                           ; OFF      ; IGNORE_CARRY                           ;
+; AUTO_CASCADE_CHAINS                            ; ON       ; AUTO_CASCADE                           ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF      ; IGNORE_CASCADE                         ;
+; LPM_WIDTHA                                     ; 8        ; Untyped                                ;
+; LPM_WIDTHB                                     ; 6        ; Untyped                                ;
+; LPM_WIDTHP                                     ; 14       ; Untyped                                ;
+; LPM_WIDTHR                                     ; 14       ; Untyped                                ;
+; LPM_WIDTHS                                     ; 1        ; Untyped                                ;
+; LPM_REPRESENTATION                             ; UNSIGNED ; Untyped                                ;
+; LPM_PIPELINE                                   ; 0        ; Untyped                                ;
+; LATENCY                                        ; 0        ; Untyped                                ;
+; INPUT_A_IS_CONSTANT                            ; NO       ; Untyped                                ;
+; INPUT_B_IS_CONSTANT                            ; NO       ; Untyped                                ;
+; USE_EAB                                        ; OFF      ; Untyped                                ;
+; MAXIMIZE_SPEED                                 ; 5        ; Untyped                                ;
+; DEVICE_FAMILY                                  ; MAX 10   ; Untyped                                ;
+; CARRY_CHAIN                                    ; MANUAL   ; Untyped                                ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT      ; TECH_MAPPER_APEX20K                    ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO     ; Untyped                                ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0        ; Untyped                                ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0        ; Untyped                                ;
+; CBXI_PARAMETER                                 ; mult_sks ; Untyped                                ;
+; INPUT_A_FIXED_VALUE                            ; Bx       ; Untyped                                ;
+; INPUT_B_FIXED_VALUE                            ; Bx       ; Untyped                                ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF      ; Untyped                                ;
++------------------------------------------------+----------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Output:out|calculation_module:calc|lpm_mult:Mult5 ;
++------------------------------------------------+----------+----------------------------------------+
+; Parameter Name                                 ; Value    ; Type                                   ;
++------------------------------------------------+----------+----------------------------------------+
+; AUTO_CARRY_CHAINS                              ; ON       ; AUTO_CARRY                             ;
+; IGNORE_CARRY_BUFFERS                           ; OFF      ; IGNORE_CARRY                           ;
+; AUTO_CASCADE_CHAINS                            ; ON       ; AUTO_CASCADE                           ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF      ; IGNORE_CASCADE                         ;
+; LPM_WIDTHA                                     ; 9        ; Untyped                                ;
+; LPM_WIDTHB                                     ; 7        ; Untyped                                ;
+; LPM_WIDTHP                                     ; 16       ; Untyped                                ;
+; LPM_WIDTHR                                     ; 16       ; Untyped                                ;
+; LPM_WIDTHS                                     ; 1        ; Untyped                                ;
+; LPM_REPRESENTATION                             ; UNSIGNED ; Untyped                                ;
+; LPM_PIPELINE                                   ; 0        ; Untyped                                ;
+; LATENCY                                        ; 0        ; Untyped                                ;
+; INPUT_A_IS_CONSTANT                            ; NO       ; Untyped                                ;
+; INPUT_B_IS_CONSTANT                            ; NO       ; Untyped                                ;
+; USE_EAB                                        ; OFF      ; Untyped                                ;
+; MAXIMIZE_SPEED                                 ; 5        ; Untyped                                ;
+; DEVICE_FAMILY                                  ; MAX 10   ; Untyped                                ;
+; CARRY_CHAIN                                    ; MANUAL   ; Untyped                                ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT      ; TECH_MAPPER_APEX20K                    ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO     ; Untyped                                ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0        ; Untyped                                ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0        ; Untyped                                ;
+; CBXI_PARAMETER                                 ; mult_0ls ; Untyped                                ;
+; INPUT_A_FIXED_VALUE                            ; Bx       ; Untyped                                ;
+; INPUT_B_FIXED_VALUE                            ; Bx       ; Untyped                                ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF      ; Untyped                                ;
++------------------------------------------------+----------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Output:out|calculation_module:calc|lpm_mult:Mult6 ;
++------------------------------------------------+----------+----------------------------------------+
+; Parameter Name                                 ; Value    ; Type                                   ;
++------------------------------------------------+----------+----------------------------------------+
+; AUTO_CARRY_CHAINS                              ; ON       ; AUTO_CARRY                             ;
+; IGNORE_CARRY_BUFFERS                           ; OFF      ; IGNORE_CARRY                           ;
+; AUTO_CASCADE_CHAINS                            ; ON       ; AUTO_CASCADE                           ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF      ; IGNORE_CASCADE                         ;
+; LPM_WIDTHA                                     ; 10       ; Untyped                                ;
+; LPM_WIDTHB                                     ; 8        ; Untyped                                ;
+; LPM_WIDTHP                                     ; 18       ; Untyped                                ;
+; LPM_WIDTHR                                     ; 18       ; Untyped                                ;
+; LPM_WIDTHS                                     ; 1        ; Untyped                                ;
+; LPM_REPRESENTATION                             ; UNSIGNED ; Untyped                                ;
+; LPM_PIPELINE                                   ; 0        ; Untyped                                ;
+; LATENCY                                        ; 0        ; Untyped                                ;
+; INPUT_A_IS_CONSTANT                            ; NO       ; Untyped                                ;
+; INPUT_B_IS_CONSTANT                            ; NO       ; Untyped                                ;
+; USE_EAB                                        ; OFF      ; Untyped                                ;
+; MAXIMIZE_SPEED                                 ; 6        ; Untyped                                ;
+; DEVICE_FAMILY                                  ; MAX 10   ; Untyped                                ;
+; CARRY_CHAIN                                    ; MANUAL   ; Untyped                                ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT      ; TECH_MAPPER_APEX20K                    ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO     ; Untyped                                ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0        ; Untyped                                ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0        ; Untyped                                ;
+; CBXI_PARAMETER                                 ; mult_cms ; Untyped                                ;
+; INPUT_A_FIXED_VALUE                            ; Bx       ; Untyped                                ;
+; INPUT_B_FIXED_VALUE                            ; Bx       ; Untyped                                ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF      ; Untyped                                ;
++------------------------------------------------+----------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Output:out|calculation_module:calc|lpm_mult:Mult7 ;
++------------------------------------------------+----------+----------------------------------------+
+; Parameter Name                                 ; Value    ; Type                                   ;
++------------------------------------------------+----------+----------------------------------------+
+; AUTO_CARRY_CHAINS                              ; ON       ; AUTO_CARRY                             ;
+; IGNORE_CARRY_BUFFERS                           ; OFF      ; IGNORE_CARRY                           ;
+; AUTO_CASCADE_CHAINS                            ; ON       ; AUTO_CASCADE                           ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF      ; IGNORE_CASCADE                         ;
+; LPM_WIDTHA                                     ; 11       ; Untyped                                ;
+; LPM_WIDTHB                                     ; 9        ; Untyped                                ;
+; LPM_WIDTHP                                     ; 20       ; Untyped                                ;
+; LPM_WIDTHR                                     ; 20       ; Untyped                                ;
+; LPM_WIDTHS                                     ; 1        ; Untyped                                ;
+; LPM_REPRESENTATION                             ; UNSIGNED ; Untyped                                ;
+; LPM_PIPELINE                                   ; 0        ; Untyped                                ;
+; LATENCY                                        ; 0        ; Untyped                                ;
+; INPUT_A_IS_CONSTANT                            ; NO       ; Untyped                                ;
+; INPUT_B_IS_CONSTANT                            ; NO       ; Untyped                                ;
+; USE_EAB                                        ; OFF      ; Untyped                                ;
+; MAXIMIZE_SPEED                                 ; 6        ; Untyped                                ;
+; DEVICE_FAMILY                                  ; MAX 10   ; Untyped                                ;
+; CARRY_CHAIN                                    ; MANUAL   ; Untyped                                ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT      ; TECH_MAPPER_APEX20K                    ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO     ; Untyped                                ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0        ; Untyped                                ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0        ; Untyped                                ;
+; CBXI_PARAMETER                                 ; mult_7ms ; Untyped                                ;
+; INPUT_A_FIXED_VALUE                            ; Bx       ; Untyped                                ;
+; INPUT_B_FIXED_VALUE                            ; Bx       ; Untyped                                ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF      ; Untyped                                ;
++------------------------------------------------+----------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Output:out|calculation_module:calc|lpm_mult:Mult8 ;
++------------------------------------------------+----------+----------------------------------------+
+; Parameter Name                                 ; Value    ; Type                                   ;
++------------------------------------------------+----------+----------------------------------------+
+; AUTO_CARRY_CHAINS                              ; ON       ; AUTO_CARRY                             ;
+; IGNORE_CARRY_BUFFERS                           ; OFF      ; IGNORE_CARRY                           ;
+; AUTO_CASCADE_CHAINS                            ; ON       ; AUTO_CASCADE                           ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF      ; IGNORE_CASCADE                         ;
+; LPM_WIDTHA                                     ; 12       ; Untyped                                ;
+; LPM_WIDTHB                                     ; 10       ; Untyped                                ;
+; LPM_WIDTHP                                     ; 22       ; Untyped                                ;
+; LPM_WIDTHR                                     ; 22       ; Untyped                                ;
+; LPM_WIDTHS                                     ; 1        ; Untyped                                ;
+; LPM_REPRESENTATION                             ; UNSIGNED ; Untyped                                ;
+; LPM_PIPELINE                                   ; 0        ; Untyped                                ;
+; LATENCY                                        ; 0        ; Untyped                                ;
+; INPUT_A_IS_CONSTANT                            ; NO       ; Untyped                                ;
+; INPUT_B_IS_CONSTANT                            ; NO       ; Untyped                                ;
+; USE_EAB                                        ; OFF      ; Untyped                                ;
+; MAXIMIZE_SPEED                                 ; 5        ; Untyped                                ;
+; DEVICE_FAMILY                                  ; MAX 10   ; Untyped                                ;
+; CARRY_CHAIN                                    ; MANUAL   ; Untyped                                ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT      ; TECH_MAPPER_APEX20K                    ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO     ; Untyped                                ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0        ; Untyped                                ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0        ; Untyped                                ;
+; CBXI_PARAMETER                                 ; mult_hns ; Untyped                                ;
+; INPUT_A_FIXED_VALUE                            ; Bx       ; Untyped                                ;
+; INPUT_B_FIXED_VALUE                            ; Bx       ; Untyped                                ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF      ; Untyped                                ;
++------------------------------------------------+----------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Output:out|calculation_module:calc|lpm_mult:Mult9 ;
++------------------------------------------------+----------+----------------------------------------+
+; Parameter Name                                 ; Value    ; Type                                   ;
++------------------------------------------------+----------+----------------------------------------+
+; AUTO_CARRY_CHAINS                              ; ON       ; AUTO_CARRY                             ;
+; IGNORE_CARRY_BUFFERS                           ; OFF      ; IGNORE_CARRY                           ;
+; AUTO_CASCADE_CHAINS                            ; ON       ; AUTO_CASCADE                           ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF      ; IGNORE_CASCADE                         ;
+; LPM_WIDTHA                                     ; 13       ; Untyped                                ;
+; LPM_WIDTHB                                     ; 11       ; Untyped                                ;
+; LPM_WIDTHP                                     ; 24       ; Untyped                                ;
+; LPM_WIDTHR                                     ; 24       ; Untyped                                ;
+; LPM_WIDTHS                                     ; 1        ; Untyped                                ;
+; LPM_REPRESENTATION                             ; UNSIGNED ; Untyped                                ;
+; LPM_PIPELINE                                   ; 0        ; Untyped                                ;
+; LATENCY                                        ; 0        ; Untyped                                ;
+; INPUT_A_IS_CONSTANT                            ; NO       ; Untyped                                ;
+; INPUT_B_IS_CONSTANT                            ; NO       ; Untyped                                ;
+; USE_EAB                                        ; OFF      ; Untyped                                ;
+; MAXIMIZE_SPEED                                 ; 6        ; Untyped                                ;
+; DEVICE_FAMILY                                  ; MAX 10   ; Untyped                                ;
+; CARRY_CHAIN                                    ; MANUAL   ; Untyped                                ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT      ; TECH_MAPPER_APEX20K                    ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO     ; Untyped                                ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0        ; Untyped                                ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0        ; Untyped                                ;
+; CBXI_PARAMETER                                 ; mult_mns ; Untyped                                ;
+; INPUT_A_FIXED_VALUE                            ; Bx       ; Untyped                                ;
+; INPUT_B_FIXED_VALUE                            ; Bx       ; Untyped                                ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF      ; Untyped                                ;
++------------------------------------------------+----------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Input:in|lpm_mult:Mult0        ;
++------------------------------------------------+----------+---------------------+
+; Parameter Name                                 ; Value    ; Type                ;
++------------------------------------------------+----------+---------------------+
+; AUTO_CARRY_CHAINS                              ; ON       ; AUTO_CARRY          ;
+; IGNORE_CARRY_BUFFERS                           ; OFF      ; IGNORE_CARRY        ;
+; AUTO_CASCADE_CHAINS                            ; ON       ; AUTO_CASCADE        ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF      ; IGNORE_CASCADE      ;
+; LPM_WIDTHA                                     ; 32       ; Untyped             ;
+; LPM_WIDTHB                                     ; 32       ; Untyped             ;
+; LPM_WIDTHP                                     ; 64       ; Untyped             ;
+; LPM_WIDTHR                                     ; 64       ; Untyped             ;
+; LPM_WIDTHS                                     ; 1        ; Untyped             ;
+; LPM_REPRESENTATION                             ; SIGNED   ; Untyped             ;
+; LPM_PIPELINE                                   ; 0        ; Untyped             ;
+; LATENCY                                        ; 0        ; Untyped             ;
+; INPUT_A_IS_CONSTANT                            ; NO       ; Untyped             ;
+; INPUT_B_IS_CONSTANT                            ; NO       ; Untyped             ;
+; USE_EAB                                        ; OFF      ; Untyped             ;
+; MAXIMIZE_SPEED                                 ; 5        ; Untyped             ;
+; DEVICE_FAMILY                                  ; MAX 10   ; Untyped             ;
+; CARRY_CHAIN                                    ; MANUAL   ; Untyped             ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT      ; TECH_MAPPER_APEX20K ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO     ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0        ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0        ; Untyped             ;
+; CBXI_PARAMETER                                 ; mult_qgs ; Untyped             ;
+; INPUT_A_FIXED_VALUE                            ; Bx       ; Untyped             ;
+; INPUT_B_FIXED_VALUE                            ; Bx       ; Untyped             ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF      ; Untyped             ;
++------------------------------------------------+----------+---------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; lpm_mult Parameter Settings by Entity Instance                                            ;
++---------------------------------------+---------------------------------------------------+
+; Name                                  ; Value                                             ;
++---------------------------------------+---------------------------------------------------+
+; Number of entity instances            ; 10                                                ;
+; Entity Instance                       ; Output:out|calculation_module:calc|lpm_mult:Mult1 ;
+;     -- LPM_WIDTHA                     ; 5                                                 ;
+;     -- LPM_WIDTHB                     ; 3                                                 ;
+;     -- LPM_WIDTHP                     ; 8                                                 ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                                          ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                                ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                                                ;
+;     -- USE_EAB                        ; OFF                                               ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                              ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                                ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                                ;
+; Entity Instance                       ; Output:out|calculation_module:calc|lpm_mult:Mult2 ;
+;     -- LPM_WIDTHA                     ; 6                                                 ;
+;     -- LPM_WIDTHB                     ; 4                                                 ;
+;     -- LPM_WIDTHP                     ; 10                                                ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                                          ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                                ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                                                ;
+;     -- USE_EAB                        ; OFF                                               ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                              ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                                ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                                ;
+; Entity Instance                       ; Output:out|calculation_module:calc|lpm_mult:Mult3 ;
+;     -- LPM_WIDTHA                     ; 7                                                 ;
+;     -- LPM_WIDTHB                     ; 5                                                 ;
+;     -- LPM_WIDTHP                     ; 12                                                ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                                          ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                                ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                                                ;
+;     -- USE_EAB                        ; OFF                                               ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                              ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                                ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                                ;
+; Entity Instance                       ; Output:out|calculation_module:calc|lpm_mult:Mult4 ;
+;     -- LPM_WIDTHA                     ; 8                                                 ;
+;     -- LPM_WIDTHB                     ; 6                                                 ;
+;     -- LPM_WIDTHP                     ; 14                                                ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                                          ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                                ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                                                ;
+;     -- USE_EAB                        ; OFF                                               ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                              ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                                ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                                ;
+; Entity Instance                       ; Output:out|calculation_module:calc|lpm_mult:Mult5 ;
+;     -- LPM_WIDTHA                     ; 9                                                 ;
+;     -- LPM_WIDTHB                     ; 7                                                 ;
+;     -- LPM_WIDTHP                     ; 16                                                ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                                          ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                                ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                                                ;
+;     -- USE_EAB                        ; OFF                                               ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                              ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                                ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                                ;
+; Entity Instance                       ; Output:out|calculation_module:calc|lpm_mult:Mult6 ;
+;     -- LPM_WIDTHA                     ; 10                                                ;
+;     -- LPM_WIDTHB                     ; 8                                                 ;
+;     -- LPM_WIDTHP                     ; 18                                                ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                                          ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                                ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                                                ;
+;     -- USE_EAB                        ; OFF                                               ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                              ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                                ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                                ;
+; Entity Instance                       ; Output:out|calculation_module:calc|lpm_mult:Mult7 ;
+;     -- LPM_WIDTHA                     ; 11                                                ;
+;     -- LPM_WIDTHB                     ; 9                                                 ;
+;     -- LPM_WIDTHP                     ; 20                                                ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                                          ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                                ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                                                ;
+;     -- USE_EAB                        ; OFF                                               ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                              ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                                ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                                ;
+; Entity Instance                       ; Output:out|calculation_module:calc|lpm_mult:Mult8 ;
+;     -- LPM_WIDTHA                     ; 12                                                ;
+;     -- LPM_WIDTHB                     ; 10                                                ;
+;     -- LPM_WIDTHP                     ; 22                                                ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                                          ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                                ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                                                ;
+;     -- USE_EAB                        ; OFF                                               ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                              ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                                ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                                ;
+; Entity Instance                       ; Output:out|calculation_module:calc|lpm_mult:Mult9 ;
+;     -- LPM_WIDTHA                     ; 13                                                ;
+;     -- LPM_WIDTHB                     ; 11                                                ;
+;     -- LPM_WIDTHP                     ; 24                                                ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                                          ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                                ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                                                ;
+;     -- USE_EAB                        ; OFF                                               ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                              ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                                ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                                ;
+; Entity Instance                       ; Input:in|lpm_mult:Mult0                           ;
+;     -- LPM_WIDTHA                     ; 32                                                ;
+;     -- LPM_WIDTHB                     ; 32                                                ;
+;     -- LPM_WIDTHP                     ; 64                                                ;
+;     -- LPM_REPRESENTATION             ; SIGNED                                            ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                                ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                                                ;
+;     -- USE_EAB                        ; OFF                                               ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                              ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                                ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                                ;
++---------------------------------------+---------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 71                          ;
+; cycloneiii_ff         ; 231                         ;
+;     ENA               ; 98                          ;
+;     ENA SCLR          ; 61                          ;
+;     SCLR SLD          ; 1                           ;
+;     SLD               ; 19                          ;
+;     plain             ; 52                          ;
+; cycloneiii_lcell_comb ; 1860                        ;
+;     arith             ; 658                         ;
+;         1 data inputs ; 6                           ;
+;         2 data inputs ; 108                         ;
+;         3 data inputs ; 544                         ;
+;     normal            ; 1202                        ;
+;         0 data inputs ; 40                          ;
+;         1 data inputs ; 18                          ;
+;         2 data inputs ; 206                         ;
+;         3 data inputs ; 271                         ;
+;         4 data inputs ; 667                         ;
+; cycloneiii_mac_mult   ; 10                          ;
+; cycloneiii_mac_out    ; 10                          ;
+;                       ;                             ;
+; Max LUT depth         ; 54.40                       ;
+; Average LUT depth     ; 23.79                       ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:15     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+    Info: Processing started: Thu Apr 26 15:50:41 2018
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off cube_root -c cube_root
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20029): Only one processor detected - disabling parallel compilation
+Info (12021): Found 1 design units, including 1 entities, in source file Output.sv
+    Info (12023): Found entity 1: Output File: /home/user/cube_root_project/Output.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file calculation_module.sv
+    Info (12023): Found entity 1: calculation_module File: /home/user/cube_root_project/calculation_module.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file cube_root.sv
+    Info (12023): Found entity 1: cube_root File: /home/user/cube_root_project/cube_root.sv Line: 1
+Info (12127): Elaborating entity "cube_root" for the top level hierarchy
+Warning (10034): Output port "LED[9..5]" at cube_root.sv(5) has no driver File: /home/user/cube_root_project/cube_root.sv Line: 5
+Warning (10034): Output port "LED[3..2]" at cube_root.sv(5) has no driver File: /home/user/cube_root_project/cube_root.sv Line: 5
+Warning (10034): Output port "LED[0]" at cube_root.sv(5) has no driver File: /home/user/cube_root_project/cube_root.sv Line: 5
+Warning (12125): Using design file Input.sv, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: Input File: /home/user/cube_root_project/Input.sv Line: 1
+Info (12128): Elaborating entity "Input" for hierarchy "Input:in" File: /home/user/cube_root_project/cube_root.sv Line: 16
+Warning (10858): Verilog HDL warning at Input.sv(9): object led used but never assigned File: /home/user/cube_root_project/Input.sv Line: 9
+Warning (10030): Net "led" at Input.sv(9) has no driver or initial value, using a default initial value '0' File: /home/user/cube_root_project/Input.sv Line: 9
+Info (12128): Elaborating entity "Output" for hierarchy "Output:out" File: /home/user/cube_root_project/cube_root.sv Line: 17
+Warning (10762): Verilog HDL Case Statement warning at Output.sv(55): can't check case statement for completeness because the case expression has too many possible states File: /home/user/cube_root_project/Output.sv Line: 55
+Info (12128): Elaborating entity "calculation_module" for hierarchy "Output:out|calculation_module:calc" File: /home/user/cube_root_project/Output.sv Line: 16
+Warning (10858): Verilog HDL warning at calculation_module.sv(13): object led used but never assigned File: /home/user/cube_root_project/calculation_module.sv Line: 13
+Warning (10240): Verilog HDL Always Construct warning at calculation_module.sv(19): inferring latch(es) for variable "val", which holds its previous value in one or more paths through the always construct File: /home/user/cube_root_project/calculation_module.sv Line: 19
+Warning (10240): Verilog HDL Always Construct warning at calculation_module.sv(19): inferring latch(es) for variable "y", which holds its previous value in one or more paths through the always construct File: /home/user/cube_root_project/calculation_module.sv Line: 19
+Warning (10240): Verilog HDL Always Construct warning at calculation_module.sv(19): inferring latch(es) for variable "s", which holds its previous value in one or more paths through the always construct File: /home/user/cube_root_project/calculation_module.sv Line: 19
+Warning (10240): Verilog HDL Always Construct warning at calculation_module.sv(19): inferring latch(es) for variable "b", which holds its previous value in one or more paths through the always construct File: /home/user/cube_root_project/calculation_module.sv Line: 19
+Warning (10240): Verilog HDL Always Construct warning at calculation_module.sv(19): inferring latch(es) for variable "ready_to_calculate", which holds its previous value in one or more paths through the always construct File: /home/user/cube_root_project/calculation_module.sv Line: 19
+Warning (10240): Verilog HDL Always Construct warning at calculation_module.sv(19): inferring latch(es) for variable "answ", which holds its previous value in one or more paths through the always construct File: /home/user/cube_root_project/calculation_module.sv Line: 19
+Warning (10030): Net "led" at calculation_module.sv(13) has no driver or initial value, using a default initial value '0' File: /home/user/cube_root_project/calculation_module.sv Line: 13
+Info (10041): Inferred latch for "answ[0]" at calculation_module.sv(32) File: /home/user/cube_root_project/calculation_module.sv Line: 32
+Info (10041): Inferred latch for "answ[1]" at calculation_module.sv(32) File: /home/user/cube_root_project/calculation_module.sv Line: 32
+Info (10041): Inferred latch for "answ[2]" at calculation_module.sv(32) File: /home/user/cube_root_project/calculation_module.sv Line: 32
+Info (10041): Inferred latch for "answ[3]" at calculation_module.sv(32) File: /home/user/cube_root_project/calculation_module.sv Line: 32
+Info (10041): Inferred latch for "answ[4]" at calculation_module.sv(32) File: /home/user/cube_root_project/calculation_module.sv Line: 32
+Info (10041): Inferred latch for "answ[5]" at calculation_module.sv(32) File: /home/user/cube_root_project/calculation_module.sv Line: 32
+Info (10041): Inferred latch for "answ[6]" at calculation_module.sv(32) File: /home/user/cube_root_project/calculation_module.sv Line: 32
+Info (10041): Inferred latch for "answ[7]" at calculation_module.sv(32) File: /home/user/cube_root_project/calculation_module.sv Line: 32
+Info (10041): Inferred latch for "answ[8]" at calculation_module.sv(32) File: /home/user/cube_root_project/calculation_module.sv Line: 32
+Info (10041): Inferred latch for "answ[9]" at calculation_module.sv(32) File: /home/user/cube_root_project/calculation_module.sv Line: 32
+Info (10041): Inferred latch for "answ[10]" at calculation_module.sv(32) File: /home/user/cube_root_project/calculation_module.sv Line: 32
+Info (10041): Inferred latch for "answ[11]" at calculation_module.sv(32) File: /home/user/cube_root_project/calculation_module.sv Line: 32
+Info (10041): Inferred latch for "answ[12]" at calculation_module.sv(32) File: /home/user/cube_root_project/calculation_module.sv Line: 32
+Info (10041): Inferred latch for "answ[13]" at calculation_module.sv(32) File: /home/user/cube_root_project/calculation_module.sv Line: 32
+Info (10041): Inferred latch for "answ[14]" at calculation_module.sv(32) File: /home/user/cube_root_project/calculation_module.sv Line: 32
+Info (10041): Inferred latch for "answ[15]" at calculation_module.sv(32) File: /home/user/cube_root_project/calculation_module.sv Line: 32
+Info (10041): Inferred latch for "answ[16]" at calculation_module.sv(32) File: /home/user/cube_root_project/calculation_module.sv Line: 32
+Info (10041): Inferred latch for "answ[17]" at calculation_module.sv(32) File: /home/user/cube_root_project/calculation_module.sv Line: 32
+Info (10041): Inferred latch for "answ[18]" at calculation_module.sv(32) File: /home/user/cube_root_project/calculation_module.sv Line: 32
+Info (10041): Inferred latch for "answ[19]" at calculation_module.sv(32) File: /home/user/cube_root_project/calculation_module.sv Line: 32
+Info (10041): Inferred latch for "answ[20]" at calculation_module.sv(32) File: /home/user/cube_root_project/calculation_module.sv Line: 32
+Info (10041): Inferred latch for "answ[21]" at calculation_module.sv(32) File: /home/user/cube_root_project/calculation_module.sv Line: 32
+Info (10041): Inferred latch for "answ[22]" at calculation_module.sv(32) File: /home/user/cube_root_project/calculation_module.sv Line: 32
+Info (10041): Inferred latch for "answ[23]" at calculation_module.sv(32) File: /home/user/cube_root_project/calculation_module.sv Line: 32
+Info (10041): Inferred latch for "answ[24]" at calculation_module.sv(32) File: /home/user/cube_root_project/calculation_module.sv Line: 32
+Info (10041): Inferred latch for "answ[25]" at calculation_module.sv(32) File: /home/user/cube_root_project/calculation_module.sv Line: 32
+Info (10041): Inferred latch for "answ[26]" at calculation_module.sv(32) File: /home/user/cube_root_project/calculation_module.sv Line: 32
+Info (10041): Inferred latch for "answ[27]" at calculation_module.sv(32) File: /home/user/cube_root_project/calculation_module.sv Line: 32
+Info (10041): Inferred latch for "answ[28]" at calculation_module.sv(32) File: /home/user/cube_root_project/calculation_module.sv Line: 32
+Info (10041): Inferred latch for "answ[29]" at calculation_module.sv(32) File: /home/user/cube_root_project/calculation_module.sv Line: 32
+Info (10041): Inferred latch for "answ[30]" at calculation_module.sv(32) File: /home/user/cube_root_project/calculation_module.sv Line: 32
+Info (10041): Inferred latch for "answ[31]" at calculation_module.sv(32) File: /home/user/cube_root_project/calculation_module.sv Line: 32
+Info (10041): Inferred latch for "ready_to_calculate" at calculation_module.sv(32) File: /home/user/cube_root_project/calculation_module.sv Line: 32
+Info (10041): Inferred latch for "y[0]" at calculation_module.sv(32) File: /home/user/cube_root_project/calculation_module.sv Line: 32
+Info (10041): Inferred latch for "y[1]" at calculation_module.sv(32) File: /home/user/cube_root_project/calculation_module.sv Line: 32
+Info (10041): Inferred latch for "y[2]" at calculation_module.sv(32) File: /home/user/cube_root_project/calculation_module.sv Line: 32
+Info (10041): Inferred latch for "y[3]" at calculation_module.sv(32) File: /home/user/cube_root_project/calculation_module.sv Line: 32
+Info (10041): Inferred latch for "y[4]" at calculation_module.sv(32) File: /home/user/cube_root_project/calculation_module.sv Line: 32
+Info (10041): Inferred latch for "y[5]" at calculation_module.sv(32) File: /home/user/cube_root_project/calculation_module.sv Line: 32
+Info (10041): Inferred latch for "y[6]" at calculation_module.sv(32) File: /home/user/cube_root_project/calculation_module.sv Line: 32
+Info (10041): Inferred latch for "y[7]" at calculation_module.sv(32) File: /home/user/cube_root_project/calculation_module.sv Line: 32
+Info (10041): Inferred latch for "y[8]" at calculation_module.sv(32) File: /home/user/cube_root_project/calculation_module.sv Line: 32
+Info (10041): Inferred latch for "y[9]" at calculation_module.sv(32) File: /home/user/cube_root_project/calculation_module.sv Line: 32
+Info (10041): Inferred latch for "y[10]" at calculation_module.sv(32) File: /home/user/cube_root_project/calculation_module.sv Line: 32
+Info (10041): Inferred latch for "y[11]" at calculation_module.sv(32) File: /home/user/cube_root_project/calculation_module.sv Line: 32
+Info (10041): Inferred latch for "y[12]" at calculation_module.sv(32) File: /home/user/cube_root_project/calculation_module.sv Line: 32
+Info (10041): Inferred latch for "y[13]" at calculation_module.sv(32) File: /home/user/cube_root_project/calculation_module.sv Line: 32
+Info (10041): Inferred latch for "y[14]" at calculation_module.sv(32) File: /home/user/cube_root_project/calculation_module.sv Line: 32
+Info (10041): Inferred latch for "y[15]" at calculation_module.sv(32) File: /home/user/cube_root_project/calculation_module.sv Line: 32
+Info (10041): Inferred latch for "y[16]" at calculation_module.sv(32) File: /home/user/cube_root_project/calculation_module.sv Line: 32
+Info (10041): Inferred latch for "y[17]" at calculation_module.sv(32) File: /home/user/cube_root_project/calculation_module.sv Line: 32
+Info (10041): Inferred latch for "y[18]" at calculation_module.sv(32) File: /home/user/cube_root_project/calculation_module.sv Line: 32
+Info (10041): Inferred latch for "y[19]" at calculation_module.sv(32) File: /home/user/cube_root_project/calculation_module.sv Line: 32
+Info (10041): Inferred latch for "y[20]" at calculation_module.sv(32) File: /home/user/cube_root_project/calculation_module.sv Line: 32
+Info (10041): Inferred latch for "y[21]" at calculation_module.sv(32) File: /home/user/cube_root_project/calculation_module.sv Line: 32
+Info (10041): Inferred latch for "y[22]" at calculation_module.sv(32) File: /home/user/cube_root_project/calculation_module.sv Line: 32
+Info (10041): Inferred latch for "y[23]" at calculation_module.sv(32) File: /home/user/cube_root_project/calculation_module.sv Line: 32
+Info (10041): Inferred latch for "y[24]" at calculation_module.sv(32) File: /home/user/cube_root_project/calculation_module.sv Line: 32
+Info (10041): Inferred latch for "y[25]" at calculation_module.sv(32) File: /home/user/cube_root_project/calculation_module.sv Line: 32
+Info (10041): Inferred latch for "y[26]" at calculation_module.sv(32) File: /home/user/cube_root_project/calculation_module.sv Line: 32
+Info (10041): Inferred latch for "y[27]" at calculation_module.sv(32) File: /home/user/cube_root_project/calculation_module.sv Line: 32
+Info (10041): Inferred latch for "y[28]" at calculation_module.sv(32) File: /home/user/cube_root_project/calculation_module.sv Line: 32
+Info (10041): Inferred latch for "y[29]" at calculation_module.sv(32) File: /home/user/cube_root_project/calculation_module.sv Line: 32
+Info (10041): Inferred latch for "y[30]" at calculation_module.sv(32) File: /home/user/cube_root_project/calculation_module.sv Line: 32
+Info (10041): Inferred latch for "y[31]" at calculation_module.sv(32) File: /home/user/cube_root_project/calculation_module.sv Line: 32
+Info (278001): Inferred 17 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Output:out|Mod0" File: /home/user/cube_root_project/Output.sv Line: 118
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Output:out|Div0" File: /home/user/cube_root_project/Output.sv Line: 119
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Output:out|Mod1" File: /home/user/cube_root_project/Output.sv Line: 118
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Output:out|Div1" File: /home/user/cube_root_project/Output.sv Line: 119
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Output:out|Mod2" File: /home/user/cube_root_project/Output.sv Line: 118
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Output:out|Div2" File: /home/user/cube_root_project/Output.sv Line: 119
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Output:out|Mod3" File: /home/user/cube_root_project/Output.sv Line: 118
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "Output:out|calculation_module:calc|Mult1" File: /home/user/cube_root_project/calculation_module.sv Line: 24
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "Output:out|calculation_module:calc|Mult2" File: /home/user/cube_root_project/calculation_module.sv Line: 24
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "Output:out|calculation_module:calc|Mult3" File: /home/user/cube_root_project/calculation_module.sv Line: 24
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "Output:out|calculation_module:calc|Mult4" File: /home/user/cube_root_project/calculation_module.sv Line: 24
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "Output:out|calculation_module:calc|Mult5" File: /home/user/cube_root_project/calculation_module.sv Line: 24
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "Output:out|calculation_module:calc|Mult6" File: /home/user/cube_root_project/calculation_module.sv Line: 24
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "Output:out|calculation_module:calc|Mult7" File: /home/user/cube_root_project/calculation_module.sv Line: 24
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "Output:out|calculation_module:calc|Mult8" File: /home/user/cube_root_project/calculation_module.sv Line: 24
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "Output:out|calculation_module:calc|Mult9" File: /home/user/cube_root_project/calculation_module.sv Line: 24
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "Input:in|Mult0" File: /home/user/cube_root_project/Input.sv Line: 19
+Info (12130): Elaborated megafunction instantiation "Output:out|lpm_divide:Mod0" File: /home/user/cube_root_project/Output.sv Line: 118
+Info (12133): Instantiated megafunction "Output:out|lpm_divide:Mod0" with the following parameter: File: /home/user/cube_root_project/Output.sv Line: 118
+    Info (12134): Parameter "LPM_WIDTHN" = "32"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_pll.tdf
+    Info (12023): Found entity 1: lpm_divide_pll File: /home/user/cube_root_project/db/lpm_divide_pll.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_olh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_olh File: /home/user/cube_root_project/db/sign_div_unsign_olh.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_qhe.tdf
+    Info (12023): Found entity 1: alt_u_div_qhe File: /home/user/cube_root_project/db/alt_u_div_qhe.tdf Line: 26
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_t3c.tdf
+    Info (12023): Found entity 1: add_sub_t3c File: /home/user/cube_root_project/db/add_sub_t3c.tdf Line: 22
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_u3c.tdf
+    Info (12023): Found entity 1: add_sub_u3c File: /home/user/cube_root_project/db/add_sub_u3c.tdf Line: 22
+Info (12130): Elaborated megafunction instantiation "Output:out|lpm_divide:Div0" File: /home/user/cube_root_project/Output.sv Line: 119
+Info (12133): Instantiated megafunction "Output:out|lpm_divide:Div0" with the following parameter: File: /home/user/cube_root_project/Output.sv Line: 119
+    Info (12134): Parameter "LPM_WIDTHN" = "32"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_mtl.tdf
+    Info (12023): Found entity 1: lpm_divide_mtl File: /home/user/cube_root_project/db/lpm_divide_mtl.tdf Line: 24
+Info (12130): Elaborated megafunction instantiation "Output:out|lpm_divide:Mod1" File: /home/user/cube_root_project/Output.sv Line: 118
+Info (12133): Instantiated megafunction "Output:out|lpm_divide:Mod1" with the following parameter: File: /home/user/cube_root_project/Output.sv Line: 118
+    Info (12134): Parameter "LPM_WIDTHN" = "32"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12130): Elaborated megafunction instantiation "Output:out|lpm_divide:Div1" File: /home/user/cube_root_project/Output.sv Line: 119
+Info (12133): Instantiated megafunction "Output:out|lpm_divide:Div1" with the following parameter: File: /home/user/cube_root_project/Output.sv Line: 119
+    Info (12134): Parameter "LPM_WIDTHN" = "32"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12130): Elaborated megafunction instantiation "Output:out|calculation_module:calc|lpm_mult:Mult1" File: /home/user/cube_root_project/calculation_module.sv Line: 24
+Info (12133): Instantiated megafunction "Output:out|calculation_module:calc|lpm_mult:Mult1" with the following parameter: File: /home/user/cube_root_project/calculation_module.sv Line: 24
+    Info (12134): Parameter "LPM_WIDTHA" = "5"
+    Info (12134): Parameter "LPM_WIDTHB" = "3"
+    Info (12134): Parameter "LPM_WIDTHP" = "8"
+    Info (12134): Parameter "LPM_WIDTHR" = "8"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
+Info (12131): Elaborated megafunction instantiation "Output:out|calculation_module:calc|lpm_mult:Mult1|multcore:mult_core", which is child of megafunction instantiation "Output:out|calculation_module:calc|lpm_mult:Mult1" File: /home/user/intelFPGA_lite/17.1/quartus/libraries/megafunctions/lpm_mult.tdf Line: 323
+Info (12131): Elaborated megafunction instantiation "Output:out|calculation_module:calc|lpm_mult:Mult1|multcore:mult_core|mpar_add:padder", which is child of megafunction instantiation "Output:out|calculation_module:calc|lpm_mult:Mult1" File: /home/user/intelFPGA_lite/17.1/quartus/libraries/megafunctions/multcore.tdf Line: 282
+Info (12131): Elaborated megafunction instantiation "Output:out|calculation_module:calc|lpm_mult:Mult1|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]", which is child of megafunction instantiation "Output:out|calculation_module:calc|lpm_mult:Mult1" File: /home/user/intelFPGA_lite/17.1/quartus/libraries/megafunctions/mpar_add.tdf Line: 78
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_amg.tdf
+    Info (12023): Found entity 1: add_sub_amg File: /home/user/cube_root_project/db/add_sub_amg.tdf Line: 22
+Info (12131): Elaborated megafunction instantiation "Output:out|calculation_module:calc|lpm_mult:Mult1|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add", which is child of megafunction instantiation "Output:out|calculation_module:calc|lpm_mult:Mult1" File: /home/user/intelFPGA_lite/17.1/quartus/libraries/megafunctions/mpar_add.tdf Line: 138
+Info (12131): Elaborated megafunction instantiation "Output:out|calculation_module:calc|lpm_mult:Mult1|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]", which is child of megafunction instantiation "Output:out|calculation_module:calc|lpm_mult:Mult1" File: /home/user/intelFPGA_lite/17.1/quartus/libraries/megafunctions/mpar_add.tdf Line: 78
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_bmg.tdf
+    Info (12023): Found entity 1: add_sub_bmg File: /home/user/cube_root_project/db/add_sub_bmg.tdf Line: 22
+Info (12131): Elaborated megafunction instantiation "Output:out|calculation_module:calc|lpm_mult:Mult1|altshift:external_latency_ffs", which is child of megafunction instantiation "Output:out|calculation_module:calc|lpm_mult:Mult1" File: /home/user/intelFPGA_lite/17.1/quartus/libraries/megafunctions/lpm_mult.tdf Line: 351
+Info (12130): Elaborated megafunction instantiation "Output:out|calculation_module:calc|lpm_mult:Mult2" File: /home/user/cube_root_project/calculation_module.sv Line: 24
+Info (12133): Instantiated megafunction "Output:out|calculation_module:calc|lpm_mult:Mult2" with the following parameter: File: /home/user/cube_root_project/calculation_module.sv Line: 24
+    Info (12134): Parameter "LPM_WIDTHA" = "6"
+    Info (12134): Parameter "LPM_WIDTHB" = "4"
+    Info (12134): Parameter "LPM_WIDTHP" = "10"
+    Info (12134): Parameter "LPM_WIDTHR" = "10"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mult_kks.tdf
+    Info (12023): Found entity 1: mult_kks File: /home/user/cube_root_project/db/mult_kks.tdf Line: 28
+Info (12130): Elaborated megafunction instantiation "Output:out|calculation_module:calc|lpm_mult:Mult3" File: /home/user/cube_root_project/calculation_module.sv Line: 24
+Info (12133): Instantiated megafunction "Output:out|calculation_module:calc|lpm_mult:Mult3" with the following parameter: File: /home/user/cube_root_project/calculation_module.sv Line: 24
+    Info (12134): Parameter "LPM_WIDTHA" = "7"
+    Info (12134): Parameter "LPM_WIDTHB" = "5"
+    Info (12134): Parameter "LPM_WIDTHP" = "12"
+    Info (12134): Parameter "LPM_WIDTHR" = "12"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mult_oks.tdf
+    Info (12023): Found entity 1: mult_oks File: /home/user/cube_root_project/db/mult_oks.tdf Line: 28
+Info (12130): Elaborated megafunction instantiation "Output:out|calculation_module:calc|lpm_mult:Mult4" File: /home/user/cube_root_project/calculation_module.sv Line: 24
+Info (12133): Instantiated megafunction "Output:out|calculation_module:calc|lpm_mult:Mult4" with the following parameter: File: /home/user/cube_root_project/calculation_module.sv Line: 24
+    Info (12134): Parameter "LPM_WIDTHA" = "8"
+    Info (12134): Parameter "LPM_WIDTHB" = "6"
+    Info (12134): Parameter "LPM_WIDTHP" = "14"
+    Info (12134): Parameter "LPM_WIDTHR" = "14"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mult_sks.tdf
+    Info (12023): Found entity 1: mult_sks File: /home/user/cube_root_project/db/mult_sks.tdf Line: 28
+Info (12130): Elaborated megafunction instantiation "Output:out|calculation_module:calc|lpm_mult:Mult5" File: /home/user/cube_root_project/calculation_module.sv Line: 24
+Info (12133): Instantiated megafunction "Output:out|calculation_module:calc|lpm_mult:Mult5" with the following parameter: File: /home/user/cube_root_project/calculation_module.sv Line: 24
+    Info (12134): Parameter "LPM_WIDTHA" = "9"
+    Info (12134): Parameter "LPM_WIDTHB" = "7"
+    Info (12134): Parameter "LPM_WIDTHP" = "16"
+    Info (12134): Parameter "LPM_WIDTHR" = "16"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mult_0ls.tdf
+    Info (12023): Found entity 1: mult_0ls File: /home/user/cube_root_project/db/mult_0ls.tdf Line: 28
+Info (12130): Elaborated megafunction instantiation "Output:out|calculation_module:calc|lpm_mult:Mult6" File: /home/user/cube_root_project/calculation_module.sv Line: 24
+Info (12133): Instantiated megafunction "Output:out|calculation_module:calc|lpm_mult:Mult6" with the following parameter: File: /home/user/cube_root_project/calculation_module.sv Line: 24
+    Info (12134): Parameter "LPM_WIDTHA" = "10"
+    Info (12134): Parameter "LPM_WIDTHB" = "8"
+    Info (12134): Parameter "LPM_WIDTHP" = "18"
+    Info (12134): Parameter "LPM_WIDTHR" = "18"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "6"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mult_cms.tdf
+    Info (12023): Found entity 1: mult_cms File: /home/user/cube_root_project/db/mult_cms.tdf Line: 28
+Info (12130): Elaborated megafunction instantiation "Output:out|calculation_module:calc|lpm_mult:Mult7" File: /home/user/cube_root_project/calculation_module.sv Line: 24
+Info (12133): Instantiated megafunction "Output:out|calculation_module:calc|lpm_mult:Mult7" with the following parameter: File: /home/user/cube_root_project/calculation_module.sv Line: 24
+    Info (12134): Parameter "LPM_WIDTHA" = "11"
+    Info (12134): Parameter "LPM_WIDTHB" = "9"
+    Info (12134): Parameter "LPM_WIDTHP" = "20"
+    Info (12134): Parameter "LPM_WIDTHR" = "20"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "6"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mult_7ms.tdf
+    Info (12023): Found entity 1: mult_7ms File: /home/user/cube_root_project/db/mult_7ms.tdf Line: 28
+Info (12130): Elaborated megafunction instantiation "Output:out|calculation_module:calc|lpm_mult:Mult8" File: /home/user/cube_root_project/calculation_module.sv Line: 24
+Info (12133): Instantiated megafunction "Output:out|calculation_module:calc|lpm_mult:Mult8" with the following parameter: File: /home/user/cube_root_project/calculation_module.sv Line: 24
+    Info (12134): Parameter "LPM_WIDTHA" = "12"
+    Info (12134): Parameter "LPM_WIDTHB" = "10"
+    Info (12134): Parameter "LPM_WIDTHP" = "22"
+    Info (12134): Parameter "LPM_WIDTHR" = "22"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mult_hns.tdf
+    Info (12023): Found entity 1: mult_hns File: /home/user/cube_root_project/db/mult_hns.tdf Line: 28
+Info (12130): Elaborated megafunction instantiation "Output:out|calculation_module:calc|lpm_mult:Mult9" File: /home/user/cube_root_project/calculation_module.sv Line: 24
+Info (12133): Instantiated megafunction "Output:out|calculation_module:calc|lpm_mult:Mult9" with the following parameter: File: /home/user/cube_root_project/calculation_module.sv Line: 24
+    Info (12134): Parameter "LPM_WIDTHA" = "13"
+    Info (12134): Parameter "LPM_WIDTHB" = "11"
+    Info (12134): Parameter "LPM_WIDTHP" = "24"
+    Info (12134): Parameter "LPM_WIDTHR" = "24"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "6"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mult_mns.tdf
+    Info (12023): Found entity 1: mult_mns File: /home/user/cube_root_project/db/mult_mns.tdf Line: 28
+Info (12130): Elaborated megafunction instantiation "Input:in|lpm_mult:Mult0" File: /home/user/cube_root_project/Input.sv Line: 19
+Info (12133): Instantiated megafunction "Input:in|lpm_mult:Mult0" with the following parameter: File: /home/user/cube_root_project/Input.sv Line: 19
+    Info (12134): Parameter "LPM_WIDTHA" = "32"
+    Info (12134): Parameter "LPM_WIDTHB" = "32"
+    Info (12134): Parameter "LPM_WIDTHP" = "64"
+    Info (12134): Parameter "LPM_WIDTHR" = "64"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mult_qgs.tdf
+    Info (12023): Found entity 1: mult_qgs File: /home/user/cube_root_project/db/mult_qgs.tdf Line: 30
+Warning (14284): Synthesized away the following node(s):
+    Warning (14285): Synthesized away the following LCELL buffer node(s):
+        Warning (14320): Synthesized away node "Output:out|calculation_module:calc|lpm_mult:Mult2|mult_kks:auto_generated|le5a[6]" File: /home/user/cube_root_project/db/mult_kks.tdf Line: 42
+Warning (14284): Synthesized away the following node(s):
+    Warning (14285): Synthesized away the following DSP element node(s):
+        Warning (14320): Synthesized away node "Input:in|lpm_mult:Mult0|mult_qgs:auto_generated|mac_mult7" File: /home/user/cube_root_project/db/mult_qgs.tdf Line: 66
+        Warning (14320): Synthesized away node "Input:in|lpm_mult:Mult0|mult_qgs:auto_generated|mac_out8" File: /home/user/cube_root_project/db/mult_qgs.tdf Line: 90
+Info (13014): Ignored 141 buffer(s)
+    Info (13016): Ignored 4 CARRY_SUM buffer(s)
+    Info (13019): Ignored 137 SOFT buffer(s)
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "LED[0]" is stuck at GND File: /home/user/cube_root_project/cube_root.sv Line: 5
+    Warning (13410): Pin "LED[1]" is stuck at GND File: /home/user/cube_root_project/cube_root.sv Line: 5
+    Warning (13410): Pin "LED[2]" is stuck at GND File: /home/user/cube_root_project/cube_root.sv Line: 5
+    Warning (13410): Pin "LED[3]" is stuck at GND File: /home/user/cube_root_project/cube_root.sv Line: 5
+    Warning (13410): Pin "LED[4]" is stuck at GND File: /home/user/cube_root_project/cube_root.sv Line: 5
+    Warning (13410): Pin "LED[5]" is stuck at GND File: /home/user/cube_root_project/cube_root.sv Line: 5
+    Warning (13410): Pin "LED[6]" is stuck at GND File: /home/user/cube_root_project/cube_root.sv Line: 5
+    Warning (13410): Pin "LED[7]" is stuck at GND File: /home/user/cube_root_project/cube_root.sv Line: 5
+    Warning (13410): Pin "LED[8]" is stuck at GND File: /home/user/cube_root_project/cube_root.sv Line: 5
+    Warning (13410): Pin "LED[9]" is stuck at GND File: /home/user/cube_root_project/cube_root.sv Line: 5
+Info (286030): Timing-Driven Synthesis is running
+Info (17016): Found the following redundant logic cells in design
+    Info (17048): Logic cell "Output:out|lpm_divide:Mod1|lpm_divide_pll:auto_generated|sign_div_unsign_olh:divider|alt_u_div_qhe:divider|add_sub_27_result_int[0]~10" File: /home/user/cube_root_project/db/alt_u_div_qhe.tdf Line: 126
+    Info (17048): Logic cell "Output:out|lpm_divide:Mod1|lpm_divide_pll:auto_generated|sign_div_unsign_olh:divider|alt_u_div_qhe:divider|add_sub_28_result_int[0]~10" File: /home/user/cube_root_project/db/alt_u_div_qhe.tdf Line: 131
+    Info (17048): Logic cell "Output:out|lpm_divide:Mod1|lpm_divide_pll:auto_generated|sign_div_unsign_olh:divider|alt_u_div_qhe:divider|add_sub_29_result_int[0]~10" File: /home/user/cube_root_project/db/alt_u_div_qhe.tdf Line: 136
+    Info (17048): Logic cell "Output:out|lpm_divide:Mod1|lpm_divide_pll:auto_generated|sign_div_unsign_olh:divider|alt_u_div_qhe:divider|add_sub_30_result_int[0]~10" File: /home/user/cube_root_project/db/alt_u_div_qhe.tdf Line: 146
+    Info (17048): Logic cell "Output:out|lpm_divide:Mod1|lpm_divide_pll:auto_generated|sign_div_unsign_olh:divider|alt_u_div_qhe:divider|add_sub_31_result_int[0]~10" File: /home/user/cube_root_project/db/alt_u_div_qhe.tdf Line: 151
+    Info (17048): Logic cell "Output:out|lpm_divide:Div1|lpm_divide_mtl:auto_generated|sign_div_unsign_olh:divider|alt_u_div_qhe:divider|add_sub_27_result_int[0]~10" File: /home/user/cube_root_project/db/alt_u_div_qhe.tdf Line: 126
+    Info (17048): Logic cell "Output:out|lpm_divide:Div2|lpm_divide_mtl:auto_generated|sign_div_unsign_olh:divider|alt_u_div_qhe:divider|add_sub_30_result_int[0]~10" File: /home/user/cube_root_project/db/alt_u_div_qhe.tdf Line: 146
+Info (144001): Generated suppressed messages file /home/user/cube_root_project/output_files/cube_root.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 9 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "SWITCH[1]" File: /home/user/cube_root_project/cube_root.sv Line: 3
+    Warning (15610): No output dependent on input pin "SWITCH[2]" File: /home/user/cube_root_project/cube_root.sv Line: 3
+    Warning (15610): No output dependent on input pin "SWITCH[3]" File: /home/user/cube_root_project/cube_root.sv Line: 3
+    Warning (15610): No output dependent on input pin "SWITCH[4]" File: /home/user/cube_root_project/cube_root.sv Line: 3
+    Warning (15610): No output dependent on input pin "SWITCH[5]" File: /home/user/cube_root_project/cube_root.sv Line: 3
+    Warning (15610): No output dependent on input pin "SWITCH[6]" File: /home/user/cube_root_project/cube_root.sv Line: 3
+    Warning (15610): No output dependent on input pin "SWITCH[7]" File: /home/user/cube_root_project/cube_root.sv Line: 3
+    Warning (15610): No output dependent on input pin "SWITCH[8]" File: /home/user/cube_root_project/cube_root.sv Line: 3
+    Warning (15610): No output dependent on input pin "SWITCH[9]" File: /home/user/cube_root_project/cube_root.sv Line: 3
+Info (21057): Implemented 1968 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 13 input pins
+    Info (21059): Implemented 58 output pins
+    Info (21061): Implemented 1880 logic cells
+    Info (21062): Implemented 17 DSP elements
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 44 warnings
+    Info: Peak virtual memory: 997 megabytes
+    Info: Processing ended: Thu Apr 26 15:51:14 2018
+    Info: Elapsed time: 00:00:33
+    Info: Total CPU time (on all processors): 00:00:30
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in /home/user/cube_root_project/output_files/cube_root.map.smsg.
+
+
